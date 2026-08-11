@@ -46,5 +46,8 @@ if (fs.existsSync(client)) {
   app.use(express.static(client));
   app.get('*', (_, res) => res.sendFile(path.join(client, 'index.html')));
 }
-app.listen(process.env.PORT || 3001, () => console.log('ABES Pulse API listening on port 3001'));
+const PORT = process.env.PORT || 10000;
 
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`ABES Pulse API listening on port ${PORT}`);
+});

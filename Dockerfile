@@ -8,5 +8,5 @@ RUN npm install --production
 COPY . .
 RUN npm run build
 
-EXPOSE 3001
+EXPOSE 10000
 CMD ["node", "server/server.js"]
